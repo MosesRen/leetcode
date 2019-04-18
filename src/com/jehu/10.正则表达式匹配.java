@@ -78,7 +78,7 @@ class Solution {
         if(p.length()==1){
             return (s.length()==1&&(s.charAt(0)==p.charAt(0)||p.charAt(0)=='.'));
         }
-        if(p.charAt(0)!='*'){
+        if(p.charAt(1)!='*'){
             if(s.isEmpty()) 
                 return false;
             return (s.charAt(0)==p.charAt(0)||p.charAt(0)=='.') && isMatch(s.substring(1), p.substring(1));
