@@ -1,5 +1,3 @@
-import javax.swing.tree.TreeNode;
-
 /*
  * @lc app=leetcode.cn id=235 lang=java
  *
@@ -34,3 +32,4 @@ class Solution {
         return root;
     }
 }
+
