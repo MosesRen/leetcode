@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Map;
 
 /*
@@ -10,7 +11,7 @@ class Solution {
     public String[] findRelativeRanks(int[] nums) {
         int[] origin = nums.clone();
         Arrays.sort(nums);
-        Map<Integer,Integer> map = new HashMap<>();
+        Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
             map.put(nums[i], nums.length-i);
         }
