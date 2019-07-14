@@ -1,3 +1,4 @@
+package src.com.jehu;
 /*
  * @lc app=leetcode.cn id=10 lang=java
  *

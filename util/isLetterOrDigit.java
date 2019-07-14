@@ -1,8 +1,9 @@
+package util;
 /**
  * 功能判断一个字符是否是字母或数字
  */
 class IsLetterOrDigit {
-    public static boolean IsLetterOrDigit(char ch, String method) {
+    public static boolean IsLetterorDigit(char ch, String method) {
         boolean result = true;
         switch (method) {
         case "letter":
