@@ -1,28 +1,41 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+
+/*
+ * @lc app=leetcode.cn id=599 lang=java
+ *
+ * [599] 两个列表的最小索引总和
+ */
 class Solution {
-    public String reverseStr(String s, int k) {
-        for (int i = 0; i < s.length(); i = i + 2 * k) {
-            if (s.length() - i < k) {
-                s = reverseString(s, i, s.length() - 1);
-            } else {
-                s = reverseString(s, i, i + k-1);
+    public boolean canPlaceFlowers(int[] flowerbed, int n) {
+        ArrayList<Integer> arrayList = new ArrayList<>();
+        int nums = 0;
+        for (int i = 0; i < flowerbed.length;i++) {
+            if(flowerbed[i]!=0){
+                if(nums!=0){
+                    arrayList.add(nums);
+                    nums = 0;
+                }
+            }else{
+                nums++;
             }
         }
-        return s;
-    }
-
-    public String reverseString(String str, int start, int end) {
-        char[] chars = str.toCharArray();
-        for (int i = start, j = end; i < j; i++, j--) {
-            char temp = chars[i];
-            chars[i] = chars[j];
-            chars[j] = temp;
+        int sum = 0;
+        for (int num : arrayList) {
+            sum += num/3;
         }
-        return String.valueOf(chars);
+        return sum>=n;
     }
-
     public static void main(String[] args) {
+        String[] list1 = {"Shogun","Tapioca Express","Burger King","KFC"};
+        int [] flowerbed = {1,0,0,0,1,0,0};
+        String[] list2 = {"Piatti","The Grill at Torrey Pines","Hungry Hunter Steakhouse","Shogun"};
         Solution test = new Solution();
-        String result = test.reverseStr("abcdefg", 2);
+        boolean result = test.canPlaceFlowers(flowerbed, 2);
         System.out.println(result);
     }
 }
