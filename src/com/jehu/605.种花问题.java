@@ -7,19 +7,27 @@ import java.util.ArrayList;
  */
 class Solution {
     public boolean canPlaceFlowers(int[] flowerbed, int n) {
-        ArrayList<Integer> arrayList = new ArrayList<>();
-        for (int i = 0; i < flowerbed.length;) {
-            int nums = 0;
-            while(flowerbed[i]!=1){
-                nums++;
-                i++;
+        if (flowerbed.length == 1 && flowerbed[0] == 0) {
+            if (n <= 1) {
+                return true;
             }
-            arrayList.add(nums);
-            i++;
+            return false;
         }
+        ArrayList<Integer> arrayList = new ArrayList<>();
+        int nums = 1;
+        for (int i = 0; i < flowerbed.length;i++) {
+            if (flowerbed[i]!=1){
+                nums++;
+            }else {
+                arrayList.add(nums);
+                nums = 0;
+            }
+
+        }
+        arrayList.add(nums+1);
         int sum = 0;
         for (int num : arrayList) {
-            sum += num/3;
+            sum += (num-1)/2;
         }
         return sum>=n;
     }

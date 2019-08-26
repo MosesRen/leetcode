@@ -1,41 +1,33 @@
+import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
+import java.util.Arrays;
 
 /*
- * @lc app=leetcode.cn id=599 lang=java
+ * @lc app=leetcode.cn id=605 lang=java
  *
- * [599] 两个列表的最小索引总和
+ * [605] 种花问题
  */
-class Solution {
-    public boolean canPlaceFlowers(int[] flowerbed, int n) {
-        ArrayList<Integer> arrayList = new ArrayList<>();
-        int nums = 0;
-        for (int i = 0; i < flowerbed.length;i++) {
-            if(flowerbed[i]!=0){
-                if(nums!=0){
-                    arrayList.add(nums);
-                    nums = 0;
-                }
-            }else{
-                nums++;
+public class Solution {
+    public int[] findErrorNums(int[] nums) {
+        int[] result = new int[2];
+        Arrays.sort(nums);
+        for (int i = 0; i < nums.length;i++) {
+            if (nums[i]!=i+1) {
+                result[1]=i+1;
+                break;
             }
         }
-        int sum = 0;
-        for (int num : arrayList) {
-            sum += num/3;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i]==nums[i+1]) {
+                result[0]=nums[i];
+            }
         }
-        return sum>=n;
+        return result;
     }
     public static void main(String[] args) {
-        String[] list1 = {"Shogun","Tapioca Express","Burger King","KFC"};
-        int [] flowerbed = {1,0,0,0,1,0,0};
-        String[] list2 = {"Piatti","The Grill at Torrey Pines","Hungry Hunter Steakhouse","Shogun"};
         Solution test = new Solution();
-        boolean result = test.canPlaceFlowers(flowerbed, 2);
-        System.out.println(result);
+        int[] result = test.findErrorNums(new int[] {3,2,3,4,6,5});
+        System.out.println(result[1]);
     }
 }
+
