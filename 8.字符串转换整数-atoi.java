@@ -1,3 +1,8 @@
+/*
+ * @lc app=leetcode.cn id=8 lang=java
+ *
+ * [8] 字符串转换整数 (atoi)
+ */
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -33,3 +38,4 @@ public class Solution{
         sc.close();
     }
 }
+

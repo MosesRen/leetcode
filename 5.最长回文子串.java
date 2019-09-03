@@ -1,3 +1,8 @@
+/*
+ * @lc app=leetcode.cn id=5 lang=java
+ *
+ * [5] 最长回文子串
+ */
 class Solution {
     public String longestPalindrome(String s) {
         if (s == null || s.length() < 1) {
@@ -26,3 +31,4 @@ class Solution {
 
     }
 }
+

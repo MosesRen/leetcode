@@ -1,3 +1,8 @@
+/*
+ * @lc app=leetcode.cn id=7 lang=java
+ *
+ * [7] 整数反转
+ */
 import java.util.LinkedList;
 import java.util.Queue;
 class Solution {
@@ -32,3 +37,4 @@ class Solution {
         
     }
 }
+
